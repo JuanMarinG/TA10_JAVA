@@ -3,7 +3,7 @@ package ex4;
 import javax.swing.JOptionPane;
 
 public class Calculadora {
-	public void Operaciones() {
+	public void start() {
 
 		String operador = JOptionPane.showInputDialog("Operacion:");
 		switch (operador) {
