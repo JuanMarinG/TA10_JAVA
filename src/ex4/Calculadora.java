@@ -4,11 +4,14 @@ import javax.swing.JOptionPane;
 
 public class Calculadora {
 	public void start() {
-		boolean loop = true;
 		
-		while(loop) {
+		while(true) {
 			String operador = JOptionPane.showInputDialog("Operaciones:\nsuma, resta, mult, div, potencia,\nraiz2, raiz3\n\n\"exit\" para salir");
 			String n1, n2 = "";
+			
+			if(operador.equals("exit")) {
+				System.exit(0);;
+			}
 			
 			do {
 				n1 = JOptionPane.showInputDialog(null, "Introduce el primer numero");
@@ -41,10 +44,7 @@ public class Calculadora {
 					break;
 				case "raiz3":
 					raiz(3,n1);
-					break;
-				case "exit":
-					loop = false;
-					break;
+					break;				
 				default:
 					JOptionPane.showMessageDialog(null, "Operador invalido");
 					break;
