@@ -3,12 +3,11 @@ package ex5;
 public class Password {
 
 	// ATRIBUTS
-	private int longitud = 0;
+	private int longitud;
 	private String pass;
 
 	// CONSTRUCTORS
 	public Password(int longitud) {
-		super();
 		this.longitud = longitud;
 		this.pass = generarPassword(longitud);
 	}
@@ -49,7 +48,7 @@ public class Password {
 		// Comptador numeros, minuscules i majuscules
 		int nums = 0, minus = 0, majus = 0;
 		// Comptar numeros, minuscules i majuscules
-		System.out.println(pass);
+		
 		for (int i = 0; i < pass.length(); i++) {
 			try {
 				char c = pass.charAt(i);
