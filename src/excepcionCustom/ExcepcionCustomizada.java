@@ -8,8 +8,6 @@ public class ExcepcionCustomizada extends Exception {
 	private final static String MSG3 = "Excepci�n Customizada 3";
 	private final static String MSG_ERROR = "Excepci�n desconocida";
 	
-	// hacer constructores 1 vacio y 1 con codigoExcepcion
-	
 	public ExcepcionCustomizada(int codigoExcepcion) {
 		super();
 		this.codigoExcepcion = codigoExcepcion;
@@ -17,8 +15,6 @@ public class ExcepcionCustomizada extends Exception {
 
 	@Override
 	public String getMessage() {
-		// TODO Auto-generated method stub
-		
 		switch(codigoExcepcion) {
 		case 1:
 			return MSG1;
@@ -29,9 +25,6 @@ public class ExcepcionCustomizada extends Exception {
 		default:
 			return MSG_ERROR;
 		}
-	}
-
-	
-	// override de getMessage()
+	}	
 
 }
