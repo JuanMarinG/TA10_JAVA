@@ -4,22 +4,26 @@ import javax.swing.JOptionPane;
 
 public class Calculadora {
 	public void start() {
-
 		while (true) {
-			String operador = JOptionPane.showInputDialog(
-					"Operaciones:\nsuma, resta, mult, div, potencia,\nraiz2, raiz3\n\n\"exit\" para salir");
+			String operador = (String) JOptionPane.showInputDialog(null,
+		        "Operacion:", 
+		        "Operacion",
+		        JOptionPane.PLAIN_MESSAGE,
+		        null,
+		        new String[]{"Suma", "Resta", "Multiplicacion", "Division", "Potencia", "Raiz2", "Raiz3", "EXIT"}, null);
+			
 			String n1, n2 = "";
-
+			operador = operador.toLowerCase();
 			if (operador.equals("exit")) {
 				System.exit(0);				
 			}
-
+			
 			do {
 				n1 = JOptionPane.showInputDialog(null, "Introduce el primer numero");
 			} while (!esNum(n1));
 
-			if (operador.equals("suma") || operador.equals("resta") || operador.equals("mult")
-					|| operador.equals("div")) {
+			if (operador.equals("suma") || operador.equals("resta") || operador.equals("multiplicacion")
+					|| operador.equals("division")) {
 				do {
 					n2 = JOptionPane.showInputDialog(null, "Introduce el segundo numero");
 				} while (!esNum(n2));
@@ -32,10 +36,10 @@ public class Calculadora {
 			case "resta":
 				resta(n1, n2);
 				break;
-			case "mult":
+			case "multiplicacion":
 				mult(n1, n2);
 				break;
-			case "div":
+			case "division":
 				div(n1, n2);
 				break;
 			case "potencia":
@@ -80,14 +84,17 @@ public class Calculadora {
 	}
 
 	private void div(String n1, String n2) {
-
-		if (Double.parseDouble(n1) == 0 || Double.parseDouble(n2) == 0) { 
+		try {
+			if (Double.parseDouble(n1) == 0 || Double.parseDouble(n2) == 0) { 
+				// Se tiene que forzar la excepcion poerque con doubles no detecta el 0
+				throw new ArithmeticException();
+			}
+	
+			double resultado = Double.parseDouble(n1) / Double.parseDouble(n2);
+			JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
+		}catch (ArithmeticException  e) {
 			JOptionPane.showMessageDialog(null, "No se puede dividir por 0");
-			return;
 		}
-
-		double resultado = Double.parseDouble(n1) / Double.parseDouble(n2);
-		JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
 	}
 
 	private void mult(String n1, String n2) {
