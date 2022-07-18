@@ -3,17 +3,14 @@ package ex5;
 public class Password {
 
 	// ATRIBUTS
-
-	String dic = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "0123456789";
 	private int longitud = 0;
 	private String pass;
 
 	// CONSTRUCTORS
-
-	public Password(int longitud, String pass) {
+	public Password(int longitud) {
 		super();
 		this.longitud = longitud;
-		this.pass = generarPassword(longitud, pass);
+		this.pass = generarPassword(longitud);
 	}
 
 	public Password() {
@@ -35,7 +32,8 @@ public class Password {
 	}
 
 	// Metodo generarPasswd
-	public String generarPassword(int longitud, String dic) {
+	public String generarPassword(int longitud) {
+		String dic = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "0123456789";
 		String pswd = "";
 
 		for (int i = 0; i < longitud; i++) {
