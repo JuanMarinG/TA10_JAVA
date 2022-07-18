@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 public class Calculadora {
 	public void start() {
 		while (true) {
-			String operador;
-			do {
-				operador = (String) JOptionPane.showInputDialog(null,
-			        "Operacion:", "Operacion",
-			        JOptionPane.QUESTION_MESSAGE, null,
-			        new String[]{"Suma", "Resta", "Multiplicacion", "Division", "Potencia", "Raiz2", "Raiz3", "EXIT"}, null);
-			} while (operador == null);
+			String operador = (String) JOptionPane.showInputDialog(null,
+		        "Operacion:", 
+		        "Operacion",
+		        JOptionPane.PLAIN_MESSAGE,
+		        null,
+		        new String[]{"Suma", "Resta", "Multiplicacion", "Division", "Potencia", "Raiz2", "Raiz3", "EXIT"}, null);
+			
 			String n1, n2 = "";
 			operador = operador.toLowerCase();
 			if (operador.equals("exit")) {
