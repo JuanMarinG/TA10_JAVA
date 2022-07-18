@@ -17,7 +17,7 @@ public class Aleatorio {
 				throw new Exception("Es impar");
 			}
 		} catch (Exception e) {
-			System.out.printf("El numero aleatorio generado es: "+e.getMessage());
+			System.out.printf("El numero aleatorio generado es: "+random+"\n"+e.getMessage());
 		}
 
 	}
