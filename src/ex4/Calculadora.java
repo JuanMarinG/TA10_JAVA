@@ -69,11 +69,14 @@ public class Calculadora {
 	}
 
 	private void resta(String n1, String n2) {
-		// TODO Auto-generated method stub
+		double resultado = Double.parseDouble(n1) - Double.parseDouble(n2);
+		JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
 	}
 
 	private void suma(String n1, String n2) {
-		// TODO Auto-generated method stub
+		double resultado = Double.parseDouble(n1) + Double.parseDouble(n2);
+		JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
+	   
 	}
 
 	private void div(String n1, String n2) {
