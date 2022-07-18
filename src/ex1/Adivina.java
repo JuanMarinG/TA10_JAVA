@@ -13,6 +13,7 @@ public static void start(int rand) {
 		int max_intentos = 0;
 		
 		try {
+			
 			do {
 				String numUser = JOptionPane.showInputDialog("Adivina el número");
 				
@@ -34,7 +35,7 @@ public static void start(int rand) {
 			}while(loop&&max_intentos<5);
 			
 		}catch(NumberFormatException ex) {
-			System.out.println("El valor introducido debe ser un numero. Has hecho "+cont+" intentos");
+			System.out.println("El valor introducido debe ser un numero. Has hecho "+(cont+1)+" intento");
 			System.out.println(ex);
 		}
 		
