@@ -15,6 +15,7 @@ public class Password {
 
 	public Password() {
 		this.longitud = 8;
+		this.pass = generarPassword(longitud);
 	}
 
 	// GETTERS SETTERS
@@ -43,23 +44,24 @@ public class Password {
 	}
 
 	// METODE public boolean esFuerte(String passwd){}
-	public boolean esFuerte(String passwd) {
+	public boolean esFuerte() {
 		boolean forta = false;
 		// Comptador numeros, minuscules i majuscules
 		int nums = 0, minus = 0, majus = 0;
 		// Comptar numeros, minuscules i majuscules
-		for (int i = 0; i < passwd.length(); i++) {
+		System.out.println(pass);
+		for (int i = 0; i < pass.length(); i++) {
 			try {
-				char c = passwd.charAt(i);
+				char c = pass.charAt(i);
 				int compNum = Integer.parseInt(String.valueOf(c));
 				// Si peta a la linia anterior, no es un numero i no sumara res
 				nums++;
 			} catch (NumberFormatException e) {
 			}
 
-			if ((passwd.charAt(i) < 91) && (passwd.charAt(i) > 64)) {
+			if ((pass.charAt(i) < 91) && (pass.charAt(i) > 64)) {
 				majus++;
-			} else if ((passwd.charAt(i) < 123) && (passwd.charAt(i) > 96)) {
+			} else if ((pass.charAt(i) < 123) && (pass.charAt(i) > 96)) {
 				minus++;
 			}
 		}
