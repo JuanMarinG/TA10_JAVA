@@ -7,28 +7,40 @@ public class Calculadora {
 		boolean loop = true;
 		
 		while(loop) {
-			String operador = JOptionPane.showInputDialog("Operaciones:\nsuma, resta, mult, div, potencia,\nraiz3, raiz3\n\n\"exit\" para salir");
+			String operador = JOptionPane.showInputDialog("Operaciones:\nsuma, resta, mult, div, potencia,\nraiz2, raiz3\n\n\"exit\" para salir");
+			String n1, n2 = "";
+			
+			do {
+				n1 = JOptionPane.showInputDialog(null, "Introduce el primer numero");
+			} while(!esNum(n1));
+			
+			if(operador.equals("suma") || operador.equals("resta") || operador.equals("mult") || operador.equals("div")) {
+				do{
+					n2 = JOptionPane.showInputDialog(null, "Introduce el segundo numero");
+				}while(!esNum(n2));
+			}			
+			
 			switch (operador) {
 				case "suma":
-					suma();
+					suma(n1,n2);
 					break;
 				case "resta":
-					resta();
+					resta(n1,n2);
 					break;
 				case "mult":
-					mult();
+					mult(n1,n2);
 					break;
 				case "div":
-					div();
+					div(n1,n2);
 					break;
 				case "potencia":
-					potencia();
+					potencia(n1);
 					break;
 				case "raiz2":
-					raiz(2);
+					raiz(2,n1);
 					break;
 				case "raiz3":
-					raiz(3);
+					raiz(3,n1);
 					break;
 				case "exit":
 					loop = false;
@@ -40,32 +52,32 @@ public class Calculadora {
 		}
 	}
 
-	private void raiz(int i) {
-		// TODO Auto-generated method stub
+	private void raiz(int i,String n1) {		
+		double resultado = Math.pow(Integer.parseInt(n1),(double)1/2);
+		JOptionPane.showMessageDialog(null, "Resultado: "+resultado);
 	}
 
-	private void potencia() {
-		// TODO Auto-generated method stub
-	}
-
-	private void resta() {
-		// TODO Auto-generated method stub
-	}
-
-	private void suma() {
-		// TODO Auto-generated method stub
-	}
-
-	private void div() {
-		String n1,n2;
-		do {
-			n1 = JOptionPane.showInputDialog(null, "Introduce el primer numero");
-		} while(!esNum(n1));
-		do {
-			n2 = JOptionPane.showInputDialog(null, "Introduce el segundo numero");
-		} while(!esNum(n2));
+	private void potencia(String n1) {
+		String n2;
+		do{
+			n2 = JOptionPane.showInputDialog(null, "Introduce el exponente");
+		}while(!esNum(n2));
 		
-		if(Double.parseDouble(n1)==0 || Double.parseDouble(n2)==0) {
+		double resultado = Math.pow(Double.parseDouble(n1), Double.parseDouble(n2));
+		JOptionPane.showMessageDialog(null, "Resultado: "+resultado);
+	}
+
+	private void resta(String n1, String n2) {
+		// TODO Auto-generated method stub
+	}
+
+	private void suma(String n1, String n2) {
+		// TODO Auto-generated method stub
+	}
+
+	private void div(String n1, String n2) {		
+		
+		if(Double.parseDouble(n1)==0 || Double.parseDouble(n2)==0) {  // hay una exception en la API de java que controla div por 0.
 			JOptionPane.showMessageDialog(null, "No se puede dividir por 0");
 			return;
 		}
@@ -74,14 +86,7 @@ public class Calculadora {
 		JOptionPane.showMessageDialog(null, "Resultado: "+resultado);
 	}
 
-	private void mult() {
-		String n1,n2;
-		do {
-			n1 = JOptionPane.showInputDialog(null, "Introduce el primer numero");
-		} while(!esNum(n1));
-		do {
-			n2 = JOptionPane.showInputDialog(null, "Introduce el segundo numero");				
-		} while(!esNum(n2));
+	private void mult(String n1, String n2) {		
 		
 		double resultado = Double.parseDouble(n1) * Double.parseDouble(n2);
 		JOptionPane.showMessageDialog(null, "Resultado: "+resultado);
