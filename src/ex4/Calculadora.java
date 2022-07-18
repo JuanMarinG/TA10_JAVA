@@ -7,7 +7,7 @@ public class Calculadora {
 		boolean loop = true;
 		
 		while(loop) {
-			String operador = JOptionPane.showInputDialog("Operaciones:\nsuma, resta, mult, div, cuadrado, cubo\n\n\"exit\" para salir");
+			String operador = JOptionPane.showInputDialog("Operaciones:\nsuma, resta, mult, div, potencia,\nraiz3, raiz3\n\n\"exit\" para salir");
 			switch (operador) {
 				case "suma":
 					suma();
@@ -21,13 +21,16 @@ public class Calculadora {
 				case "div":
 					div();
 					break;
-				case "cuadrado":
-					cuadrado();
+				case "potencia":
+					potencia();
 					break;
-				case "cubo":
-					cubo();
+				case "raiz2":
+					raiz(2);
 					break;
-				case "salir":
+				case "raiz3":
+					raiz(3);
+					break;
+				case "exit":
 					loop = false;
 					break;
 				default:
@@ -37,14 +40,14 @@ public class Calculadora {
 		}
 	}
 
-	private void cubo() {
+	private void raiz(int i) {
 		// TODO Auto-generated method stub
 	}
 
-	private void cuadrado() {
+	private void potencia() {
 		// TODO Auto-generated method stub
 	}
-	
+
 	private void resta() {
 		// TODO Auto-generated method stub
 	}
