@@ -17,7 +17,7 @@ public class Metodos {
 		int numUser=0;
 		
 		try {
-		numUser = Integer.parseInt(num);}
+			numUser = Integer.parseInt(num);}
 		catch(Exception e) {
 			System.out.println("El valor introducido debe ser un numero");
 		}
@@ -26,7 +26,7 @@ public class Metodos {
 		
 	}
 	
-	public static boolean compararNumRespuesta(int numUser, int numRndom) {
+	public static boolean compararNumRespuesta(int numUser,int numRndom) {
 		boolean adivinado = false;
 		if (numUser < numRndom) {
 			System.out.println("El numero introducido es menor que el numero aleatorio ");
