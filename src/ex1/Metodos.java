@@ -11,18 +11,13 @@ public class Metodos {
 		return num;
 	}
 
-	// Comparamos el valor introducido por el usuario. Si no es numerico, nos saltara un error.
+	// Casteamos num introducido por Jpanel (String) a int 
 	
 	public static int validarRespuesta(String num) {
 		
-		int numUser=0;
+		int numUser=0;		
 		
-		try {
-			numUser = Integer.parseInt(num);}
-		catch(NumberFormatException ex) {
-			System.out.println("El valor introducido debe ser un numero");
-			System.out.println(ex);
-		}
+		numUser = Integer.parseInt(num);
 		
 		return numUser;
 		
