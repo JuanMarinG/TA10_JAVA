@@ -14,8 +14,8 @@ public static void start(int rand) {
 
 			
 			
-			// Comparamos los dos numeros
-			if(Metodos.mayorMenor(n, rand)) {
+			// Miramos que no ha habido error y comparamos los dos numeros
+			if(n!=0 && Metodos.compararNumRespuesta(n, rand)) {
 				// entra aqui si se ha adivinado
 				
 				// notificamos al usuario
