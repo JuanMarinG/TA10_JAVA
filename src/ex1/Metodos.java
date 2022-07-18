@@ -1,5 +1,6 @@
 package ex1;
 
+
 public class Metodos {
 
 	// Marcamos un maximo para que nos genere un numero aleatorio entre 0 y 500
@@ -18,8 +19,9 @@ public class Metodos {
 		
 		try {
 			numUser = Integer.parseInt(num);}
-		catch(Exception e) {
+		catch(NumberFormatException ex) {
 			System.out.println("El valor introducido debe ser un numero");
+			System.out.println(ex);
 		}
 		
 		return numUser;
