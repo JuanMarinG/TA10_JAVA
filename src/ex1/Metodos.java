@@ -22,15 +22,17 @@ public class Metodos {
 		
 	}
 	
-	public static void compararNumRespuesta(int numUser, int numRndom) {
-
-		if (numUser <= numRndom) {
+	public static boolean compararNumRespuesta(int numUser, int numRndom) {
+		boolean adivinado = false;
+		if (numUser < numRndom) {
 			System.out.println("El numero introducido es menor que el numero aleatorio ");
-			if (numUser >= numRndom) {
-				System.out.println("El numero introducido es mayor que el numero aleatorio ");
-			}
+		} else if (numUser > numRndom) {
+			System.out.println("El numero introducido es mayor que el numero aleatorio ");
+		} else {
+			adivinado = true;
 		}
-
+		
+		return adivinado;
 	}
 }
 
