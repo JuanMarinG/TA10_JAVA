@@ -8,7 +8,7 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		
-		int n = Integer.parseInt(JOptionPane.showInputDialog("Introduce c�digo error"));
+		int n = Integer.parseInt(JOptionPane.showInputDialog("Introduce codigo error"));
 		
 		try {
 			throw new ExcepcionCustomizada(n);
