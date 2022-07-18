@@ -2,11 +2,13 @@ package ex2;
 
 import javax.swing.JOptionPane;
 
+import excepcionCustom.ExcepcionCustomizada;
+
 public class MainApp {
 
 	public static void main(String[] args) {
 		
-		int n = Integer.parseInt(JOptionPane.showInputDialog("Introduce código error"));
+		int n = Integer.parseInt(JOptionPane.showInputDialog("Introduce cï¿½digo error"));
 		
 		try {
 			throw new ExcepcionCustomizada(n);
