@@ -1,4 +1,4 @@
-package ex6;
+package ex5;
 
 public class MainApp {
 
