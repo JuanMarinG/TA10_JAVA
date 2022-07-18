@@ -15,7 +15,9 @@ public static void start(int rand) {
 			
 			do {
 				String numUser = JOptionPane.showInputDialog("Adivina el numero");
-				
+				if(numUser==null) {
+					return;
+				}
 				//validamos que sea un num
 		        n = Metodos.validarRespuesta(numUser);	        
 				
