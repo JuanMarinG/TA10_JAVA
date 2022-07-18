@@ -6,22 +6,18 @@ public class Aleatorio {
 
 	public void start() {
 
-		int min = 0;
-		int max = 999;
-
+		System.out.println("Generando numero aleatorio...");
 		Random newRandom = new Random();
-		int random = newRandom.nextInt(max) + min;
+		int random = newRandom.nextInt(999);
 
 		try {
-
 			if (random % 2 == 0) {
-				throw new Exception("ES PAR");
+				throw new Exception("Es par");
 			} else {
-				throw new Exception("ES IMPAR");
+				throw new Exception("Es impar");
 			}
 		} catch (Exception e) {
-
-			System.out.printf(e.getMessage());
+			System.out.printf("El numero aleatorio generado es: "+e.getMessage());
 		}
 
 	}
